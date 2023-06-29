@@ -1,0 +1,134 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+	/*agregado con flexbox */
+	/*display: flex;
+	gap: 20px;*/
+
+	display: grid;
+	grid-template-columns: 3fr 2fr;/*numero y tamañano de nuesro grif */
+	gap: 20px;
+
+
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-pizzas {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	/*flexbox */
+	/*width: 70%;
+	/* para que se comience a ajustar el texto*/
+/*display: flex; /*alinir */
+	/*flex-wrap: wrap; /*se adapte al espacio*/
+	*/*gap: 20px; /*el tamaño del espacio que debe de aver en cada elemento*/
+	
+}
+/*cada elemento que viene dentro del contendor*/
+.card {
+	border-radius: 10px; /*redondea las esquinas de las tarjetas */
+	min-height: 200px;/*altura minima */
+	font-weight: bold;/*hace que todo le texto e haga en formato de letra negrita  */
+	padding: 20px;/*espacio alrededor del contenio dentro del elemento */
+	position: relative;/*establece el tipo de posicionamiento del elemento RELATIVE permie mover el elemeto de su posicion normal se movera al flujo de la pagina*/
+	overflow: hidden;/*que hacer si el contenido del elemento es mas grande entonces cualquier contenido que se salga del elemento lo oculta  */
+	background-size: cover;/*la imagen del fondo hace que se ajuste completamente a la pantalla  */
+	background-position: center center;/*posiciona la imagen del fondo en el centro */
+	/* flexbox*/
+	/*width: 33.33%; 
+	/*para que quepan tres fotos */
+	/*esto es con flexbox */
+	/*width:  calc(33.33% - 20px);*/
+
+}
+
+.card .textos {
+	height: 100%;/* */
+	/* flexbox*/
+	/*display: flex;
+	flex-direction: column;
+	justify-content: space-between;*//*el primer elemento estara en la parte inferior y el ultimo en la inferior */
+	/*echo por css grid */
+	display: grid;
+	grid-template-rows: 1fr auto;
+
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;/* aliniar el texto*/
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+	/*flexbox */
+	/*width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;*/
+
+	display: grid;
+	grid-template-rows: auto auto auto; /*el tamnaño de la fila va ser automatico  */
+	align-items: center;
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+/* para establecer estilos especificos cuando se tienen medidas especificas de la pantalla*/
+
+@media screen and (max-width: 900px) {
+	.contenedor{
+		grid-template-columns: 1fr;
+	}/*cuando el ancho de la pantalla sea menor o igual se aplicara en el contenedor */
+}
+
+@media screen and (max-width: 700px) {
+	.card{
+		min-height: 150px;
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.banner{
+		grid-template-rows: auto auto;
+	}
+}
